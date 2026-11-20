@@ -4,11 +4,15 @@
 
 The desktop app:
 
-    brew install --cask jamesbraid/origami/origami
+```sh
+brew install --cask jamesbraid/origami/origami
+```
 
 The command-line tool, with the bundled QEMU:
 
-    brew install jamesbraid/origami/origami-cli
+```sh
+brew install jamesbraid/origami/origami-cli
+```
 
 Update with `brew upgrade`. Remove the app with `brew uninstall --cask origami`, or `brew uninstall --zap --cask origami` to delete its preferences and caches too. Your machines and disks in `~/Library/Application Support/Origami` are never touched.
 
