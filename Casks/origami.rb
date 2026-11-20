@@ -1,6 +1,6 @@
 cask "origami" do
   version "0.6.1"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "f48e7dd3184203959a2e0a7e7ea553bb3cba95a68b4d2a5abd387f98cdc16f51"
 
   url "https://github.com/jamesbraid/origami/releases/download/v#{version}/origami-#{version}-macos-universal.zip",
       verified: "github.com/jamesbraid/origami/"
