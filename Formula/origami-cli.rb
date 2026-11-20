@@ -22,6 +22,6 @@ class OrigamiCli < Formula
   end
 
   test do
-    assert_match "origami #{version}", shell_output("#{bin}/origami --version")
+    assert_match "origami v#{version}", shell_output("#{bin}/origami --version")
   end
 end
