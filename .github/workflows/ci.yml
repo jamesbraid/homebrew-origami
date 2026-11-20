@@ -1,0 +1,23 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: macos-latest
+    steps:
+      - uses: Homebrew/actions/setup-homebrew@main
+      - run: brew style jamesbraid/origami
+      - run: brew audit --strict --online --cask jamesbraid/origami/origami
+      - run: brew audit --strict --online jamesbraid/origami/origami-cli
+      # Warnings fail the run, so a deprecation shows up here before users see it.
+      - run: brew install --cask jamesbraid/origami/origami 2>&1 | tee install.log; ! grep -q '^Warning' install.log
+      - run: brew install jamesbraid/origami/origami-cli
+      - run: brew test jamesbraid/origami/origami-cli
