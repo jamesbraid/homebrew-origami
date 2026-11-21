@@ -16,8 +16,12 @@ cask "origami" do
 
   app "Origami.app"
 
+  # The old fans.irix.origami paths stay for upgraders on case-sensitive volumes.
   # Leaves ~/Library/Application Support/Origami alone: it holds users' machines and disks.
   zap trash: [
+    "~/Library/Caches/fans.irix.Origami",
+    "~/Library/Preferences/fans.irix.Origami.plist",
+    "~/Library/Saved Application State/fans.irix.Origami.savedState",
     "~/Library/Caches/fans.irix.origami",
     "~/Library/Preferences/fans.irix.origami.plist",
     "~/Library/Saved Application State/fans.irix.origami.savedState",
